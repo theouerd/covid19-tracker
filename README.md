@@ -4,7 +4,7 @@ This is a Covid-19 global tracker,builtwith Reactjs (Hooks), Chartjs and Reactst
 
 ## Live Site
 
-https://covid19-global-tracker.netlify.app/
+https://covid19-globaltracker.netlify.app/
 
 ## API USED
 
