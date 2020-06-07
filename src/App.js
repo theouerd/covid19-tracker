@@ -1,5 +1,7 @@
 import React, { useEffect, useState, Fragment } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import ReactGA from 'react-ga';
+
 import './App.css';
 
 import { Cards, Chart, CountryPicker, NavBar, Footer } from './components';
@@ -8,6 +10,7 @@ import { Container } from 'reactstrap';
 const App = () => {
   const [data, setData] = useState({});
   const [country, setCountry] = useState('');
+  ReactGA.initialize('UA-168751324-1');
 
   useEffect(() => {
     const fetchAPI = async () => {
