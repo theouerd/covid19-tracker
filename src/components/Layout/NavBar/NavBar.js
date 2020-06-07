@@ -1,10 +1,11 @@
 import React from 'react';
-import logo from '../../assets/images/covid-19-corona.png';
+import { Link } from 'react-router-dom';
+import logo from '../../../assets/images/covid-19-corona.png';
 
 function NavBar() {
   return (
     <nav className="navbar navbar-light bg-light mb-3">
-      <a className="navbar-brand" href="#">
+      <Link className="navbar-brand" to="/">
         <img
           src={logo}
           width="30"
@@ -13,7 +14,7 @@ function NavBar() {
           alt=""
         />
         Covid-19 Tracker
-      </a>
+      </Link>
     </nav>
   );
 }

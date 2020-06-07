@@ -1,9 +1,10 @@
 import React, { useEffect, useState, Fragment } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 
-import { Cards, Chart, CountryPicker, NavBar } from './components';
+import { Cards, Chart, CountryPicker, NavBar, Footer } from './components';
 import { fetchData } from './api';
-import { Container, Spinner } from 'reactstrap';
+import { Container } from 'reactstrap';
 const App = () => {
   const [data, setData] = useState({});
   const [country, setCountry] = useState('');
@@ -23,16 +24,19 @@ const App = () => {
     setData(data);
   };
 
-  if (!data) return <Spinner />;
+  if (!data) console.log('here');
   return (
-    <Fragment>
-      <NavBar />
-      <Container>
-        <Cards data={data} />
-        <CountryPicker handleCountryChange={handleCountryChange} />
-        <Chart data={data} country={country} />
-      </Container>
-    </Fragment>
+    <Router>
+      <Fragment>
+        <NavBar />
+        <Container>
+          <Cards data={data} />
+          <CountryPicker handleCountryChange={handleCountryChange} />
+          <Chart data={data} country={country} />
+        </Container>
+        <Footer />
+      </Fragment>
+    </Router>
   );
 };
 
