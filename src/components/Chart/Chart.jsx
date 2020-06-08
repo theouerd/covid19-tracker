@@ -64,11 +64,13 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                 },
               ],
             }}
-            height={100}
             options={{
               legend: { display: false },
               title: { display: true, text: `Current state in ${country}` },
+              maintainAspectRatio: false,
             }}
+            width={100}
+            height={100}
           />
         </div>
       </CardBody>
