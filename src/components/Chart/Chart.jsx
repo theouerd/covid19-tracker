@@ -20,7 +20,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const lineChart = dailyData.length ? (
     <Card className="bg-default">
       <CardBody>
-        <div className={style.lineChart}>
+        <div className="chart">
           <Line
             data={{
               labels: dailyData.map(({ date }) => date), // map
@@ -39,23 +39,6 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                   fill: true,
                 },
               ],
-            }}
-            options={{
-              scales: {
-                yAxes: [
-                  {
-                    stacked: false,
-                  },
-                ],
-                xAxes: [
-                  {
-                    stacked: false,
-                    gridLines: {
-                      display: false,
-                    },
-                  },
-                ],
-              },
             }}
           />
         </div>
