@@ -1,12 +1,11 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ReactGA from 'react-ga';
 
 import './App.css';
 
-import { Cards, Chart, CountryPicker, NavBar, Footer } from './components';
+import { Cards, Chart, CountryPicker, Layout } from './components';
 import { fetchData } from './api';
-import { Container } from 'reactstrap';
 const App = () => {
   const [data, setData] = useState({});
   const [country, setCountry] = useState('');
@@ -30,15 +29,11 @@ const App = () => {
   if (!data) console.log('here');
   return (
     <Router>
-      <Fragment>
-        <NavBar />
-        <Container>
-          <Cards data={data} />
-          <CountryPicker handleCountryChange={handleCountryChange} />
-          <Chart data={data} country={country} />
-        </Container>
-        <Footer />
-      </Fragment>
+      <Layout>
+        <Cards data={data} />
+        <CountryPicker handleCountryChange={handleCountryChange} />
+        <Chart data={data} country={country} />
+      </Layout>
     </Router>
   );
 };

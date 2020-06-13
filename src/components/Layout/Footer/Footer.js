@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { NavItem, NavLink, Nav, Container, Row, Col } from 'reactstrap';
 
 const Footer = () => {
   return (
-    <div>
+    <Fragment>
       <footer className="py-5">
         <Container>
           <Row className="align-items-center justify-content-xl-between">
@@ -30,7 +30,7 @@ const Footer = () => {
           </Row>
         </Container>
       </footer>
-    </div>
+    </Fragment>
   );
 };
 

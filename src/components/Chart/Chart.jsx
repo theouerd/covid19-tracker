@@ -3,6 +3,8 @@ import { fetchDailyData } from '../../api';
 import { Line, Bar } from 'react-chartjs-2';
 import { Card, CardBody, Container } from 'reactstrap';
 
+import style from './Chart.module.css';
+
 const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const [dailyData, setDailyData] = useState({});
 
@@ -18,7 +20,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const lineChart = dailyData.length ? (
     <Card className="bg-default">
       <CardBody>
-        <div className="chart">
+        <div className={style.lineChart}>
           <Line
             data={{
               labels: dailyData.map(({ date }) => date), // map
@@ -38,16 +40,39 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                 },
               ],
             }}
+            options={{
+              scales: {
+                yAxes: [
+                  {
+                    stacked: false,
+                  },
+                ],
+                xAxes: [
+                  {
+                    stacked: false,
+                    gridLines: {
+                      display: false,
+                    },
+                  },
+                ],
+              },
+            }}
           />
         </div>
       </CardBody>
     </Card>
   ) : null;
 
+  const barChartOptions = {
+    legend: { display: false },
+    title: { display: true, text: `Current state in ${country}` },
+    maintainAspectRatio: false,
+  };
+
   const barChart = confirmed ? (
     <Card className="bg-default">
       <CardBody>
-        <div className="chart">
+        <div className={style.barChart}>
           <Bar
             data={{
               labels: ['Infected', 'Recovred', 'Deaths'],
@@ -64,13 +89,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                 },
               ],
             }}
-            options={{
-              legend: { display: false },
-              title: { display: true, text: `Current state in ${country}` },
-              maintainAspectRatio: false,
-            }}
-            width={100}
-            height={100}
+            options={barChartOptions}
           />
         </div>
       </CardBody>
