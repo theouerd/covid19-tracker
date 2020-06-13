@@ -17,6 +17,10 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
     fetchAPI();
   }, []);
 
+  const lineChartOptions = {
+    maintainAspectRatio: false,
+  };
+
   const lineChart = dailyData.length ? (
     <Card className="bg-default">
       <CardBody>
@@ -40,6 +44,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
                 },
               ],
             }}
+            options={lineChartOptions}
           />
         </div>
       </CardBody>

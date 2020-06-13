@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import ReactGA from 'react-ga';
-
 import './App.css';
 
 import { Cards, Chart, CountryPicker, Layout } from './components';
 import { fetchData } from './api';
+
 const App = () => {
   const [data, setData] = useState({});
   const [country, setCountry] = useState('');

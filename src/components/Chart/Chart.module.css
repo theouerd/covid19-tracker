@@ -4,3 +4,10 @@
     height: 50vh;
     width: 70vw;
 }
+
+.lineChart {
+    position: relative;
+    margin: auto;
+    height: 50vh;
+    width: 70vw;
+}

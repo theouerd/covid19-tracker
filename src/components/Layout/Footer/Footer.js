@@ -4,7 +4,7 @@ import { NavItem, NavLink, Nav, Container, Row, Col } from 'reactstrap';
 const Footer = () => {
   return (
     <Fragment>
-      <footer className="py-5">
+      <footer className="py-2">
         <Container>
           <Row className="align-items-center justify-content-xl-between">
             <Col xl="6">
@@ -22,7 +22,7 @@ const Footer = () => {
               <Nav className="nav-footer justify-content-center justify-content-xl-end">
                 <NavItem>
                   <NavLink href="https://github.com/theouerd/covid19-tracker">
-                    Code source
+                    <span className="ml-1">Source code</span>
                   </NavLink>
                 </NavItem>
               </Nav>
