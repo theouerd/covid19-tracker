@@ -59,7 +59,7 @@ const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
   };
 
   const barChart = confirmed ? (
-    <Card className="bg-light mb-4">
+    <Card className="bg-light mb-4 container">
       <CardBody>
         <div className={`chart ${style.barChart}`} style={{ height: '400px' }}>
           <Bar
