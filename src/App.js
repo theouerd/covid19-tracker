@@ -3,8 +3,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import ReactGA from 'react-ga';
 import './App.css';
 
-import { Cards, Chart, CountryPicker, Layout } from './components';
+import { Cards, Charts, CountryPicker, Layout } from './components';
 import { fetchData } from './api';
+
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
+library.add(faGithub);
 
 const App = () => {
   const [data, setData] = useState({});
@@ -32,7 +37,7 @@ const App = () => {
       <Layout>
         <Cards data={data} />
         <CountryPicker handleCountryChange={handleCountryChange} />
-        <Chart data={data} country={country} />
+        <Charts data={data} country={country} />
       </Layout>
     </Router>
   );

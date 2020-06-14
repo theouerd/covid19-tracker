@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
 import { Container } from 'reactstrap';
-import Footer from './Footer/Footer';
 import NavBar from './NavBar/NavBar';
+import Footer from './Footer/Footer';
 
 const Layout = (props) => (
   <Fragment>

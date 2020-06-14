@@ -40,7 +40,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 </span>
               </div>
               <Col className="col-auto">
-                <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
+                <div className="icon icon-shape bg-primary text-white rounded-circle shadow">
                   <i className="fas fa-chart-bar" />
                 </div>
               </Col>
@@ -72,7 +72,7 @@ const Cards = ({ data: { confirmed, recovered, deaths, lastUpdate } }) => {
                 </span>
               </div>
               <Col className="col-auto">
-                <div className="icon icon-shape bg-danger text-white rounded-circle shadow">
+                <div className="icon icon-shape bg-success text-white rounded-circle shadow">
                   <i className="fas fa-chart-bar" />
                 </div>
               </Col>

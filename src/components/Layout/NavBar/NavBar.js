@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/images/covid-19-corona.png';
+import logo from '../../../assets/img/covid-19-corona.png';
 
 function NavBar() {
   return (

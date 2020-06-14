@@ -5,7 +5,7 @@ import { Card, CardBody, Container } from 'reactstrap';
 
 import style from './Chart.module.css';
 
-const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
+const Charts = ({ data: { confirmed, recovered, deaths }, country }) => {
   const [dailyData, setDailyData] = useState({});
 
   useEffect(() => {
@@ -23,9 +23,9 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   };
 
   const lineChart = dailyData.length ? (
-    <Card className="bg-default">
+    <Card className="bg-light mb-4">
       <CardBody>
-        <div className="chartjs" style={{ height: '300px' }}>
+        <div className="chart" style={{ height: '400px' }}>
           <Line
             data={{
               labels: dailyData.map(({ date }) => date), // map
@@ -59,9 +59,9 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   };
 
   const barChart = confirmed ? (
-    <Card className="bg-default">
+    <Card className="bg-light mb-4">
       <CardBody>
-        <div className={style.barChart} style={{ height: '300px' }}>
+        <div className={`chart ${style.barChart}`} style={{ height: '400px' }}>
           <Bar
             data={{
               labels: ['Infected', 'Recovred', 'Deaths'],
@@ -88,4 +88,4 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   return <Container>{country ? barChart : lineChart}</Container>;
 };
 
-export default Chart;
+export default Charts;

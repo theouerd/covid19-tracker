@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import { NavItem, NavLink, Nav, Container, Row, Col } from 'reactstrap';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 const Footer = () => {
   return (
     <Fragment>
@@ -22,6 +24,7 @@ const Footer = () => {
               <Nav className="nav-footer justify-content-center justify-content-xl-end">
                 <NavItem>
                   <NavLink href="https://github.com/theouerd/covid19-tracker">
+                    <FontAwesomeIcon icon={['fab', 'github']} />
                     <span className="ml-1">Source code</span>
                   </NavLink>
                 </NavItem>
