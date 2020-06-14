@@ -19,12 +19,13 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
 
   const lineChartOptions = {
     maintainAspectRatio: false,
+    responsive: true,
   };
 
   const lineChart = dailyData.length ? (
     <Card className="bg-default">
       <CardBody>
-        <div className="chart">
+        <div className="chartjs" style={{ height: '300px' }}>
           <Line
             data={{
               labels: dailyData.map(({ date }) => date), // map
@@ -60,7 +61,7 @@ const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
   const barChart = confirmed ? (
     <Card className="bg-default">
       <CardBody>
-        <div className={style.barChart}>
+        <div className={style.barChart} style={{ height: '300px' }}>
           <Bar
             data={{
               labels: ['Infected', 'Recovred', 'Deaths'],
