@@ -1,14 +1,12 @@
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
-import { Container } from 'reactstrap';
-import NavBar from './NavBar/NavBar';
-import Footer from './Footer/Footer';
+import { Container } from "reactstrap";
+import NavBar from "./NavBar/NavBar";
 
-const Layout = (props) => (
+const Layout = ({ children }) => (
   <Fragment>
     <NavBar />
-    <Container>{props.children}</Container>
-    <Footer />
+    <Container>{children}</Container>
   </Fragment>
 );
 
